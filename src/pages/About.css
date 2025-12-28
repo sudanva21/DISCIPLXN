@@ -1,0 +1,200 @@
+.about {
+    background: var(--color-black);
+}
+
+/* Hero Section */
+.about-hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.about-hero__bg {
+    position: absolute;
+    inset: -20%;
+    background:
+        radial-gradient(ellipse at 30% 50%, rgba(220, 38, 38, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 50%, rgba(60, 60, 60, 0.1) 0%, transparent 50%);
+}
+
+.about-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            transparent 0%,
+            var(--color-black) 100%);
+    pointer-events: none;
+}
+
+.about-hero__content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: var(--space-20) var(--space-6) 0;
+}
+
+.about-hero__label {
+    display: inline-block;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-6);
+}
+
+.about-hero__title {
+    font-size: clamp(3rem, 10vw, 7rem);
+    line-height: 1;
+}
+
+/* Story Section */
+.about-story {
+    position: relative;
+    padding: var(--space-24) 0;
+    background: var(--color-charcoal);
+}
+
+.about-story__container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+.about-story__lines {
+    margin-bottom: var(--space-16);
+}
+
+.about-story__line {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.4;
+    color: var(--color-white);
+    margin: 0;
+    margin-bottom: var(--space-3);
+}
+
+.about-story__line:last-child {
+    color: var(--color-accent);
+}
+
+.about-story__description {
+    max-width: 700px;
+}
+
+.about-story__description p {
+    font-size: var(--text-lg);
+    line-height: 1.8;
+    color: var(--color-silver);
+}
+
+/* Values Section */
+.about-values {
+    padding: var(--space-24) 0;
+    background: var(--color-black);
+}
+
+.about-values__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+.about-values__title {
+    text-align: center;
+    margin-bottom: var(--space-16);
+}
+
+.about-values__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+}
+
+.about-value-card {
+    padding: var(--space-8);
+    background: var(--color-charcoal);
+    border: 1px solid var(--color-grey-dark);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+}
+
+.about-value-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-4px);
+}
+
+.about-value-card__number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    color: var(--color-accent);
+    opacity: 0.3;
+    margin-bottom: var(--space-4);
+}
+
+.about-value-card__title {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-3);
+}
+
+.about-value-card__description {
+    font-size: var(--text-sm);
+    color: var(--color-grey-light);
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* CTA Section */
+.about-cta {
+    padding: var(--space-32) 0;
+    background: var(--color-charcoal);
+    text-align: center;
+}
+
+.about-cta__container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+.about-cta__title {
+    font-size: var(--text-5xl);
+    margin-bottom: var(--space-8);
+}
+
+.about-cta__button {
+    padding: var(--space-5) var(--space-12);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .about-values__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        min-height: 60vh;
+    }
+
+    .about-story,
+    .about-values {
+        padding: var(--space-16) 0;
+    }
+
+    .about-values__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-cta {
+        padding: var(--space-20) 0;
+    }
+}

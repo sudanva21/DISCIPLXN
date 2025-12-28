@@ -1,0 +1,116 @@
+.statement {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-black);
+    overflow: hidden;
+}
+
+/* Background */
+.statement__bg {
+    position: absolute;
+    inset: -20%;
+    will-change: transform;
+}
+
+.statement__bg-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(150px);
+    animation: statementGlow 10s ease-in-out infinite;
+}
+
+.statement__bg-glow--1 {
+    top: 20%;
+    left: 10%;
+    background: rgba(220, 38, 38, 0.05);
+    animation-delay: 0s;
+}
+
+.statement__bg-glow--2 {
+    bottom: 20%;
+    right: 10%;
+    background: rgba(100, 100, 100, 0.05);
+    animation-delay: 5s;
+}
+
+@keyframes statementGlow {
+
+    0%,
+    100% {
+        transform: scale(1) translate(0, 0);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.1) translate(20px, -20px);
+        opacity: 0.8;
+    }
+}
+
+.statement__bg-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(90deg, transparent 0%, transparent 49%, var(--color-grey-dark) 50%, transparent 51%, transparent 100%);
+    background-size: 200px 100%;
+    opacity: 0.1;
+}
+
+/* Content */
+.statement__content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: var(--space-8);
+}
+
+.statement__text {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.statement__text--primary {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--color-silver);
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-4);
+}
+
+.statement__text--accent {
+    font-size: clamp(3rem, 8vw, 6rem);
+    background: linear-gradient(135deg,
+            var(--color-accent) 0%,
+            #ef4444 50%,
+            var(--color-accent-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.05em;
+}
+
+.statement__line {
+    width: 120px;
+    height: 3px;
+    background: var(--color-accent);
+    margin: var(--space-8) auto 0;
+    transform-origin: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .statement {
+        min-height: 60vh;
+    }
+
+    .statement__text--primary {
+        margin-bottom: var(--space-2);
+    }
+}
